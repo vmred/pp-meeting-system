@@ -3,9 +3,9 @@ from sqlalchemy.testing.schema import Column
 
 from app.db.session import Base
 
-meeting_participants = Table(
-    'meeting_participants',
+expense_participants = Table(
+    'expense_participants',
     Base.metadata,
-    Column('meeting_id', Integer, ForeignKey('meetings.id')),
+    Column('expense_id', Integer, ForeignKey('expenses.id')),
     Column('user_id', UUID, ForeignKey('users.id'))
 )
