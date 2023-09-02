@@ -1,0 +1,26 @@
+name: 'PR validation'
+
+on:
+  pull_request:
+
+jobs:
+  validation-job:
+    name: 'PR validation run'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: 'Install poetry'
+        run: curl -sSL https://install.python-poetry.org | python3 -
+
+      - name: 'Install dependencies'
+        run: poetry update
+
+      - name: 'Check isort'
+        run: poetry run ./linters/check_isort.sh
+
+      - name: 'Check black'
+        run: poetry run ./linters/check_black.sh
