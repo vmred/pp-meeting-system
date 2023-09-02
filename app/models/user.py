@@ -7,7 +7,6 @@ from sqlalchemy.orm import Mapped, relationship
 from app.db.session import Base
 from app.models.expense_participants import expense_participants
 from app.models.meeting_participants import meeting_participants
-from app.models.expense_participants import expense_participants
 
 
 class User(Base):
