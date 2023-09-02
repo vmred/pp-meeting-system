@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, UUID, ForeignKey
+from sqlalchemy import UUID, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.mixins.timestamp import TimestampMixin

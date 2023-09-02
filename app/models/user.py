@@ -1,12 +1,12 @@
 from typing import List
 from uuid import uuid4
 
-from sqlalchemy import Column, UUID, String
+from sqlalchemy import UUID, Column, String
 from sqlalchemy.orm import Mapped, relationship
 
 from app.db.session import Base
-from app.models.meeting_participants import meeting_participants
 from app.models.expense_participants import expense_participants
+from app.models.meeting_participants import meeting_participants
 
 
 class User(Base):
