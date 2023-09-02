@@ -26,7 +26,7 @@ engines = {"main": create_engine(config.main_database.connection_string(), pool_
 
 
 class RoutingSession(Session):
-    def get_bind(self, mapper=None, clause=None, **kw):
+    def get_bind(self, **kwargs):  # pylint: disable=unused-argument
         return engines['main']
 
 
@@ -35,7 +35,7 @@ async_session_factory = sessionmaker(
     sync_session_class=RoutingSession,
 )
 session: Union[AsyncSession, async_scoped_session] = async_scoped_session(
-    session_factory=async_session_factory,
+    session_factory=async_session_factory,  # noqa
     scopefunc=get_session_context,
 )
 Base = declarative_base()

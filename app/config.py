@@ -20,7 +20,7 @@ class ApplicationConfig(BaseModel):
 
 
 def _load_config() -> ApplicationConfig:
-    with open(config_path, "r") as f:
+    with open(config_path, "r", encoding='UTF-8') as f:
         config_data = load(f.read(), Loader)
     return ApplicationConfig(**config_data)
 

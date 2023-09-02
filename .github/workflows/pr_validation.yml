@@ -24,3 +24,6 @@ jobs:
 
       - name: 'Check black'
         run: poetry run ./linters/check_black.sh
+
+      - name: 'Check pylint'
+        run: poetry run ./linters/check_pylint.sh
