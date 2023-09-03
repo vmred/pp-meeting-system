@@ -32,3 +32,33 @@ disable = [
     'missing-docstring',
     'empty-docstring'
 ]
+
+[tool.poetry]
+name = "pp-meeting-system"
+version = "0.1.0"
+description = ""
+authors = ["vmred <16134967+vmred@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+# dev packages
+python = "^3.9"
+black = "==23.3.0"
+isort = "==5.12.0"
+pylint = "==2.16.1"
+pytest = "==7.3.1"
+pytest-html = "==3.2.0"
+# app packages
+asyncpg = "==0.28.0"
+sqlalchemy = "==2.0.20"
+alembic = "==1.12.0"
+psycopg2-binary = "==2.9.7"
+pydantic = "==2.3.0"
+pyyaml = "==6.0.1"
+contextvars = "==2.4"
+greenlet = "==2.0.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
