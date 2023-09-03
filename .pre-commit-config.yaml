@@ -1,0 +1,21 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+    -   id: check-yaml
+
+- repo: local
+  hooks:
+    - id: isort
+      name: isort
+      entry: ./linters/indent_isort.sh
+      language: system
+      types: [python]
+      pass_filenames: false
+
+    - id: black
+      name: black
+      entry: ./linters/indent_black.sh
+      language: system
+      types: [ python ]
+      pass_filenames: false
