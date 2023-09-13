@@ -14,4 +14,4 @@ class Expense(Base):
     # relationships
     owner_id: Mapped[UUID] = mapped_column(ForeignKey("users.id"))
     meeting_id: Mapped[Integer] = mapped_column(ForeignKey('meetings.id'))
-    expense_participants = relationship('User', secondary='expense_participants', back_populates='expenses')
+    users = relationship('User', secondary='expense_participants', back_populates='expenses')

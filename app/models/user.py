@@ -18,5 +18,5 @@ class User(Base):
     # relationships
     meeting_relationship: Mapped[List["Meeting"]] = relationship()
     comment_relationship: Mapped[List["Comment"]] = relationship()
-    meeting_participants = relationship('Meeting', secondary='meeting_participants', back_populates='users')
-    expense_participants = relationship('Expense', secondary='expense_participants', back_populates='users')
+    meetings = relationship('Meeting', secondary='meeting_participants', back_populates='users')
+    expenses = relationship('Expense', secondary='expense_participants', back_populates='users')

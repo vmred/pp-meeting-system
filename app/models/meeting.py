@@ -17,4 +17,4 @@ class Meeting(Base):
     # relationships
     comment_relationship: Mapped[List["Comment"]] = relationship()
     creator_user_id: Mapped[UUID] = mapped_column(ForeignKey("users.id"))
-    meeting_participants = relationship('User', secondary='meeting_participants', back_populates='meetings')
+    users = relationship('User', secondary='meeting_participants', back_populates='meetings')
