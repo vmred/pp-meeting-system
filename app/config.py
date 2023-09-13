@@ -12,7 +12,7 @@ class DatabaseConfig(BaseModel):
     db_name: str
 
     def connection_string(self) -> str:
-        return f"postgresql+psycopg2://{self.username}:{self.password}@{self.host}:{self.port}/{self.db_name}"
+        return f"postgresql+asyncpg://{self.username}:{self.password}@{self.host}:{self.port}/{self.db_name}"
 
 
 class ApplicationConfig(BaseModel):

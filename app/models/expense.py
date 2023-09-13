@@ -1,8 +1,7 @@
 from sqlalchemy import UUID, BigInteger, Column, ForeignKey, Integer
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.db.session import Base
-from app.models.expense_participants import expense_participants
+from app.db import Base
 
 
 class Expense(Base):
@@ -15,4 +14,4 @@ class Expense(Base):
     # relationships
     owner_id: Mapped[UUID] = mapped_column(ForeignKey("users.id"))
     meeting_id: Mapped[Integer] = mapped_column(ForeignKey('meetings.id'))
-    expense_participants = relationship('User', secondary=expense_participants, back_populates='expenses')
+    expense_participants = relationship('User', secondary='expense_participants', back_populates='expenses')
