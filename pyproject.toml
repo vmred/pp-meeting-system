@@ -32,6 +32,9 @@ disable = [
     'missing-docstring',
     'empty-docstring'
 ]
+ignore-paths = [
+    'migrations/.*'
+]
 
 [tool.poetry]
 name = "pp-meeting-system"
